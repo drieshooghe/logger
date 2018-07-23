@@ -5,5 +5,8 @@
         "name": "Dries Hooghe",
         "email": "dries@drieshooghe.com",
         "url": "https://www.drieshooghe.com"
+    },
+    "dependencies": {
+        "googleapis": "^32.0.0"
     }
 }
