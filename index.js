@@ -39,4 +39,6 @@ exports.log = (req, res) => {
       console.log('Message sent: ', res);
     }
   });
+
+  res.sendStatus(200);
 };
