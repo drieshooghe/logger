@@ -5,6 +5,7 @@
   "dependencies": {
     "@slack/client": "^4.3.1",
     "google-spreadsheet": "^2.0.5",
+    "googleapis": "^32.0.0",
     "moment-timezone": "^0.5.21"
   },
   "description": "Working hour logger for Google Cloud Functions and Google Sheets",
