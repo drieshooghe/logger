@@ -1,12 +1,22 @@
 {
-    "name": "logger",
-    "version": "0.0.1",
-    "author": {
-        "name": "Dries Hooghe",
-        "email": "dries@drieshooghe.com",
-        "url": "https://www.drieshooghe.com"
-    },
-    "dependencies": {
-        "googleapis": "^32.0.0"
-    }
+  "name": "logger",
+  "version": "0.0.1",
+  "author": "Dries Hooghe <dries@drieshooghe.com> (https://www.drieshooghe.com)",
+  "dependencies": {
+    "googleapis": "^32.0.0"
+  },
+  "description": "Working hour logger for Google Cloud Functions and Google Sheets",
+  "main": "index.js",
+  "scripts": {
+    "test": "node -e 'require(\"./index.js\").log()'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drieshooghe/logger.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drieshooghe/logger/issues"
+  },
+  "homepage": "https://github.com/drieshooghe/logger#readme"
 }
