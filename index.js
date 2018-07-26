@@ -1,15 +1,14 @@
 // Requirements
 var GoogleSpreadsheet = require('google-spreadsheet');
+const {google} = require('googleapis');
+const { IncomingWebhook } = require('@slack/client');
 var moment = require('moment-timezone');
-
 var creds = require('./credentials.json');
 var sheetInfo = require('./sheet_info.json');
 var slackInfo = require('./slack_info.json');
 
-
 // Variables
 var doc = new GoogleSpreadsheet(sheetInfo.id);
-const { IncomingWebhook } = require('@slack/client');
 const webhook = new IncomingWebhook(slackInfo.url);
 
 // Entrypoint
