@@ -1,0 +1,14 @@
+{
+    "google": {
+        "sheets": {
+            "id": "",
+            "tab": 1
+        }
+    },
+    "slack": {
+        "url": ""
+    },
+    "api": {
+        "key": ""
+    }
+}
