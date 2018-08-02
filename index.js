@@ -4,12 +4,11 @@ const {google} = require('googleapis');
 const { IncomingWebhook } = require('@slack/client');
 var moment = require('moment-timezone');
 var creds = require('./credentials.json');
-var sheetInfo = require('./sheet_info.json');
-var slackInfo = require('./slack_info.json');
+var env = require('./env.json')
 
 // Variables
-var doc = new GoogleSpreadsheet(sheetInfo.id);
-const webhook = new IncomingWebhook(slackInfo.url);
+var doc = new GoogleSpreadsheet(env.google.sheets.id);
+const webhook = new IncomingWebhook(env.slack.url);
 
 // Entrypoint
 exports.log = (req, res) => {
@@ -23,7 +22,7 @@ exports.log = (req, res) => {
     if (err) {
       console.error(err);
     }
-    doc.addRow(sheetInfo.tabId, {
+    doc.addRow(env.google.sheets.tab, {
       "DATE": date,
       "TIME": time
     }, function (err) {
