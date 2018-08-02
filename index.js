@@ -17,16 +17,18 @@ exports.log = (req, res) => {
   var now = moment().tz('Europe/Brussels');
   var time = '=TIME(' + now.format('HH, mm, ss') + ')';
   var date = '=DATE(' + now.format('YYYY, MM, DD') + ')';
-  var message = 'Dries badged at ' + now.format('HH:mm on MMMM Do YYYY');
+  var message = 'Dries badged at ' + now.format('HH:mm:ss on MMMM Do YYYY');
 
   var result = doc.useServiceAccountAuth(creds, function (err) {
-
+    if (err) {
+      console.error(err);
+    }
     doc.addRow(sheetInfo.tabId, {
       "DATE": date,
       "TIME": time
     }, function (err) {
       if (err) {
-        message = 'Whoops, looks like something went wrong when you badged:' + err;
+        console.error(err);
       }
     }
     );
@@ -34,7 +36,7 @@ exports.log = (req, res) => {
 
   webhook.send(message, function (err, res) {
     if (err) {
-      console.log('Error:', err);
+      console.error(err);
     } else {
       console.log('Message sent: ', res);
     }
@@ -42,3 +44,4 @@ exports.log = (req, res) => {
 
   res.sendStatus(200);
 };
+
